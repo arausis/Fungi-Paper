@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+\usepackage{relsize}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1\usepackage[english]{babel}
+
+\begin{document}
+
+\title{Equations to Model Decomposition Rate}
+\author{\textbf{Ansel Rausis} \ }
+\date{2023-10-23}
+
+\noindent
+\section*{Environment}
+$ D: $ Woody Decomposition Rate\\
+$ K: $ Carrying Capacity\\
+$ \beta : $  Effect of environment on growth\\ 
+$ H: $ Environmental severity\\
+$ N(t): $ Total population \\
+$ S(t): $ Population of Sapotrophic Fungi\\
+$ j:  $ Number of fungal species
+
+\section*{Fungus}
+$ r_i: $ Hyphal Extension Rate\\
+$ h_i: $ Ideal severity\\
+$ n_i(t): $ Population\\
+$ m_i: $ Moisture tolerance \\
+$ s_i: $ Sapotrophic/not sapotrophic\\ 
+$ c_i: $ Competitiveness
+
+\section*{The equations}
+
+\begin{equation} \label{Population}
+    N(t) = \mathlarger{\mathlarger{\sum}}_{i=0}^{j} n_i
+\end{equation}
+
+\begin{equation} \label{Sapotrophic}
+    S(t) = \mathlarger{\mathlarger{\sum}}_{i=0}^{j} 
+    \begin{cases}
+	    0 & s_i = 0\\
+	    n_i & s_i = 1
+    \end{cases}
+\end{equation}
+\noindent
+Equations \ref{Population} and \ref{Sapotrophic} define our population and sapotrophic populations using sigma notation.
+
+\begin{equation}\label{rstar}
+    r^*_i  = r_i \left(1 - \beta_i\frac{|h_i - H|}{m_i}\right)
+\end{equation}
+
+\noindent
+$ r^*_i $ is a combination of our hyphal extension rate and our enviornmental stress term.
+
+\begin{equation}\label{piecewise}
+\frac{dn_i}{dt} = \begin{cases} 
+          -\left|r^*_i n_i(t) \left(c_i - \frac{N(t)}{K} \right) \right| & r^*_i  < 0\\
+          r^*_i n_i(t) \left(c_i - \frac{N(t)}{K} \right) & r^*_i \geq 0 
+       \end{cases}
+\end{equation}
+
+\noindent
+ The piecewise equation function in equation \ref{piecewise} ensures that in the event of a negative $ r^*_i $ and a negative competition term, our fungus does not have a positive growth rate. This function ensures that if either function is negative, the overall growth rate will be negative. 
+
+ \begin{equation}
+     D(t) = S(t)
+ \end{equation}
+ \noindent
+ This one is still up for some alterations, but I currently have our decomposition rate being equal to the population of sapotrophic fungi.
+ 
+ \end{document}
