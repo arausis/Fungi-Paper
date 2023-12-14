@@ -63,27 +63,18 @@ $ c_i: $ Competitiveness
 \noindent
 Equations \ref{Population} and \ref{Sapotrophic} define our population and sapotrophic populations using sigma notation.
 
-\begin{equation}\label{rstar}
-    r^*_i  = r_i \left(1 - \beta_i\frac{|h_i - H|}{m_i}\right)
+\begin{equation}\label{Growth rate}
+    \frac{dn_i}{dt} = r_i \left(c_i - \frac{\left| h_i - H\right|}{m_i} - \frac{N}{K} \right)
 \end{equation}
 
 \noindent
-$ r^*_i $ is a combination of our hyphal extension rate and our enviornmental stress term.
+Equation \ref{Growth rate} shows how we have chosen to simulate fungal performance. Note that a single fungus under ideal conditions would grow to the carrying capacity ($ K $ ) at ti's growth rate ($ r_i $ ). If the fungus were outside of it's ideal environment, then this would be indiciated in a difference between $ h_i $ and $ H $, which would lower the growth rate as well as the maximum capacity that the fungus could reach. This effect would be mitigated by a fungus having a higher moisture tolerance ($ m_i $ ). A similar effect occurs based on the ($ c_i $ ) of the fungus, which represents how well the fungus competes with other fungi in it's environment. A lower $ c_i $ would result in slower growth rate and a lower capacity for the fungus. This effect would be amplified as there is more biomass of competing fungi in the environment. 
 
-\begin{equation}\label{piecewise}
-\frac{dn_i}{dt} = \begin{cases} 
-          -\left|r^*_i n_i(t) \left(c_i - \frac{N(t)}{K} \right) \right| & r^*_i  < 0\\
-          r^*_i n_i(t) \left(c_i - \frac{N(t)}{K} \right) & r^*_i \geq 0 
-       \end{cases}
-\end{equation}
-
-\noindent
- The piecewise equation function in equation \ref{piecewise} ensures that in the event of a negative $ r^*_i $ and a negative competition term, our fungus does not have a positive growth rate. This function ensures that if either function is negative, the overall growth rate will be negative. 
 
  \begin{equation}
-     D(t) = S(t)
+     D(t) \propto S(t)
  \end{equation}
  \noindent
- This one is still up for some alterations, but I currently have our decomposition rate being equal to the population of sapotrophic fungi.
+ This one is still up for some alterations, but I currently have our decomposition rate being proportional to the population of sapotrophic fungi.
  
  \end{document}
