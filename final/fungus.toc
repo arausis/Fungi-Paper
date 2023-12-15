@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{}%
+\contentsline {subsection}{\numberline {1.1}Qualities of Fungi}{1}{}%
+\contentsline {subsection}{\numberline {1.2}Relationship Between Moisture Tolerance and Competitiveness}{1}{}%
+\contentsline {section}{\numberline {2}Fungi Characteristics}{1}{}%
+\contentsline {subsection}{\numberline {2.1}Fungi Interactions}{1}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}Competitiveness}{1}{}%
+\contentsline {subsection}{\numberline {2.2}Fungistasis}{1}{}%
+\contentsline {subsection}{\numberline {2.3}Fungi Decomposition}{2}{}%
+\contentsline {section}{\numberline {3}Environmental Effects on Fungi}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Temperature}{2}{}%
+\contentsline {subsection}{\numberline {3.2}Humidity}{2}{}%
+\contentsline {subsection}{\numberline {3.3}Light}{2}{}%
+\contentsline {subsection}{\numberline {3.4}Fungi Decomposition}{2}{}%
+\contentsline {subsection}{\numberline {3.5}Biodiversity and Varying Environments}{2}{}%
+\contentsline {section}{\numberline {4}Hyphal Extension and Wood Decomposition}{2}{}%
+\contentsline {section}{\numberline {5}Moisture Niche Width}{3}{}%
+\contentsline {section}{\numberline {6}Model Discussion}{3}{}%
+\contentsline {section}{\numberline {7}Model Analysis}{3}{}%
+\contentsline {subsection}{\numberline {7.1}Arid Conditions}{3}{}%
+\contentsline {subsection}{\numberline {7.2}Semi-Arid conditions}{4}{}%
+\contentsline {section}{\numberline {8}Assumptions}{4}{}%
+\contentsline {section}{\numberline {9}Conclusion}{5}{}%
